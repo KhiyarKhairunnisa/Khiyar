@@ -1,13 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title><b>Perpustakaan Personal Khiyar Khairunnisa</b></title>
-<body>
-<h1>Perpustakaan Personal Khiyar</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Khiyar Khairunnisa</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Warna latar belakang */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Memastikan footer di bagian bawah */
+        }
+        header {
+            background-color: #042698; /* Warna header */
+            color: #efe8e0;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+        nav {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 15px;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #efe8e0;
+            text-decoration: none;
+            transition: color 0.3s; /* Transisi warna */
+        }
+        nav a:hover {
+            color: #f8d210; /* Warna saat hover */
+        }
+        .container {
+            max-width: 800px; /* Lebar maksimum kontainer */
+            margin: 20px auto; /* Pusatkan kontainer */
+            padding: 20px;
+        }
+        h1 {
+            color: #efe8e0; /* Warna judul */
+            margin-bottom: 20px; /* Spasi bawah judul */
+        }
+        h2 {
+            color: #042698; /* Warna subjudul */
+            margin-top: 10px; /* Spasi atas subjudul */
+            margin-bottom: 10px; /* Spasi bawah subjudul */
+            text-align: justify;
+        }
+        h3 {
+            color: #042698; /* Warna subjudul */
+            margin-top: 10px; /* Spasi atas untuk h3 */
+            margin-bottom: 10px; /* Spasi bawah untuk h3 */
+            text-align: justify;
+        }
+        p {
+            line-height: 1.5;
+            margin-bottom: 15px; /* Spasi bawah paragraf */
+            text-align: justify;
+        }
+        footer {
+            text-align:center;
+            padding: 10px;
+            background-color: #042698; /* Warna footer */
+            color: #efe8e0;
+            font-size: 0.8em;
+        }
+    </style>
 </head>
-  <h2>About Me</h2>
-<p>Saya Khiyar Khairunnisa merupakan seorang mahasiswi semester 6 Program Studi Perpustakaan dan Sains Informasi, Fakultas Ilmu Budaya, Universitas Sumatera Utara.</p>
-  <h3>Kerja Sama</h3>
-  <a href="https://www.instagram.com/library_unila/">Perpustakaan Universitas Lampung</a>
+<body>
+
+<header>
+    <h1>Perpustakaan Khiyar Khairunnisa</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<div class="container">
+    <section id="home">
+        <h2>Halo! Selamat Datang di Perpustakaan Khiyar Khairunnisa</h2>
+        <p>Terima kasih telah mengunjungi halaman web kami! Anda dapat melihat berbagai tugas yang telah saya selesaikan selama satu semester dalam mata kuliah Pengembangan Web Perpustakaan.</p>
+        <p>Selain itu, halaman ini juga terhubung dengan perpustakaan mitra <a href="https://library.unila.ac.id/" target="_blank">Perpustakaan Universitas Lampung</a> yang menyediakan beragam sumber daya tambahan untuk mendukung pembelajaran. Semoga informasi yang tersedia dapat bermanfaat, dan jangan ragu untuk mengeksplorasi lebih lanjut!</p>
+      
+        <h3>Selamat Menjelajah!</h3>
+    </section>
+</div>
 </body>
 </html>
