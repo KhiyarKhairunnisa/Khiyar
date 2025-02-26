@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Perpustakaan Khiyar Khairunnisa</title>
+    <style>
+        body {
+            font-family: 'GillMT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Warna latar belakang */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Memastikan footer di bagian bawah */
+        }
+        header {
+            background-color: #042698; /* Warna header */
+            color: #efe8e0;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+        nav {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #efe8e0;
+            text-decoration: none;
+            transition: color 0.3s; /* Transisi warna */
+        }
+        nav a:hover {
+            color: #f8d210; /* Warna saat hover */
+        }
+        .container {
+            max-width: 800px; /* Lebar maksimum kontainer */
+            margin: 20px auto; /* Pusatkan kontainer */
+            padding: 20px;
+        }
+        h1 {
+            color: #efe8e0; /* Warna judul */
+            margin-bottom: 20px; /* Spasi bawah judul */
+        }
+        h2 {
+            color: #042698; /* Warna subjudul */
+            margin-top: 20px; /* Spasi atas subjudul */
+            margin-bottom: 10px; /* Spasi bawah subjudul */
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 6px;
+            margin: 10px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #042698; /* Warna tombol kirim */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: grey; /* Warna saat hover tombol */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #042698; /* Warna footer */
+            color: #efe8e0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Hubungi Kami</h2>
+    <p>Kami siap mendengar Anda! Hubungi kami untuk pertanyaan, saran, atau informasi lebih lanjut tentang layanan kami.</p>
+    <form>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+
+        <label for="hp">No. HP/WA</label>
+        <input type="text" id="hp" name="hp">
+
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" rows="4"></textarea>
+        
+        <input type="submit" value="Kirim">
+    </form>
+</div>
+</body>
+</html>
