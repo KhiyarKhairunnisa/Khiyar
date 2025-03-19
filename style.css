@@ -5,3 +5,23 @@ footer {
     color: #efe8e0;
     font-size: 0.8em;
 }
+body {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  header, footer, nav a {
+    transition: background-color 0.5s, color 0.5s;
+  }
+  .container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s; /* muncul pas loader hilang */
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
