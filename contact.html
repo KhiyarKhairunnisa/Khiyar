@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Perpustakaan Khiyar Khairunnisa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <style>
         body {
             font-family: 'GillMT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Trebuchet MS', sans-serif;
@@ -16,26 +17,27 @@
             min-height: 100vh; /* Memastikan footer di bagian bawah */
         }
         header {
-            background-color: #042698; /* Warna header */
-            color: #efe8e0;
-            padding: 5px 10px;
-            text-align: center;
-            font-size: 15px;
-        }
-        nav {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-        }
-        nav a {
-            margin: 0 10px;
-            color: #efe8e0;
-            text-decoration: none;
-            transition: color 0.3s; /* Transisi warna */
-        }
-        nav a:hover {
-            color: #f8d210; /* Warna saat hover */
-        }
+    background-color: #042698;
+    color: #efe8e0;
+    padding: 20px 10px;
+    text-align: center;
+}
+nav {
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* biar responsif di layar kecil */
+}
+nav a {
+    color: #efe8e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #f8d210;
+}
         .container {
             max-width: 800px; /* Lebar maksimum kontainer */
             margin: 20px auto; /* Pusatkan kontainer */
@@ -82,7 +84,7 @@
     </style>
 </head>
 <body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <header>
     <h1>Contact Us</h1>
     <nav>
