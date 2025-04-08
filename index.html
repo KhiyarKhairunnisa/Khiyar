@@ -107,6 +107,22 @@ body.dark-mode nav a {
 body.dark-mode nav a:hover {
   color: #f8d210;
 }
+body.dark-mode .event-card {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+body.dark-mode .event-card p {
+  color: #f0f0f0; /*event card */
+}
+body.dark-mode .event-card p:first-child {
+  color: #7aa5ff; /* judul event di mode gelap */
+}
+body.dark-mode .event-card p:nth-child(2) {
+  color: #ccc; /* warna tanggal */
+}
+body.dark-mode .event-card p:nth-child(3) {
+  color: black; /* deskripsi */
+}
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -128,6 +144,49 @@ body.dark-mode nav a:hover {
         <p>Selain itu, halaman ini juga terhubung dengan perpustakaan mitra <a href="https://library.unila.ac.id/" target="_blank">Perpustakaan Universitas Lampung</a> yang menyediakan beragam sumber daya tambahan untuk mendukung pembelajaran. Semoga informasi yang tersedia dapat bermanfaat, dan jangan ragu untuk mengeksplorasi lebih lanjut!</p>
       
         <h3>Selamat Menjelajah!</h3>
+
+<h2 style="font-size: 20px; margin-bottom: 15px;">📆 Event Perpustakaan</h2>
+<div id="event-container" style="max-width: 600px; font-size: 14px;"></div>
+
+<script>
+  const events = [
+    {
+      title: "Webinar Public Speaking",
+      date: "15 Januari 2025",
+      description: "Tema: 'Peran Public Speaking dalam Meningkatkan Kompetensi Komunikasi Mahasiswa di Era Transformasi'"
+    },
+    {
+      title: "Peringatan Isra' Mi'raj",
+      date: "9 Februari 2025",
+      description: "Tema: 'Memaknai Hikmah Perjalanan Isra' Mi'raj Nabi Muhammad SAW'"
+    },
+    {
+      title: "Seminar Public Speaking Vol.2",
+      date: "21 Februari 2025",
+      description: "Tema: 'Seni Berbicara di Depan Publik dengan Penuh Keyakinan'"
+    },
+    {
+      title: "Buka Puasa Bersama",
+      date: "21 Maret 2025",
+      description: "Berbagi kebahagiaan dan raih keberkahan di bulan suci Ramadhan"
+    }
+  ];
+
+  const container = document.getElementById("event-container");
+
+  events.forEach((event) => {
+    const card = document.createElement("div");
+    card.className = "event-card border rounded p-2 mb-2 shadow-sm";
+    card.style.backgroundColor = "#f8f9fa";
+    card.innerHTML = `
+      <p style="font-weight: 600; color: #042698; margin: 0;">${event.title}</p>
+      <p style="color: gray; margin: 2px 0 4px;">📅 ${event.date}</p>
+      <p style="margin: 0 0 5px;">${event.description}</p>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
 <button class="switch-btn" onclick="toggleMode()">Mode Gelap</button>
 <script>
     function toggleMode() {
