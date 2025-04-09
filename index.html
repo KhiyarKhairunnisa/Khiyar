@@ -153,38 +153,56 @@ body.dark-mode .event-card p:nth-child(3) {
     {
       title: "Webinar Public Speaking",
       date: "15 Januari 2025",
-      description: "Tema: 'Peran Public Speaking dalam Meningkatkan Kompetensi Komunikasi Mahasiswa di Era Transformasi'"
+      description: "Tema: 'Peran Public Speaking dalam Meningkatkan Kompetensi Komunikasi Mahasiswa di Era Transformasi'",
+      image: "https://github.com/KhiyarKhairunnisa/Khiyar/blob/main/IMG_20250409_134925.jpg?raw=true",
+      link: "https://www.instagram.com/p/DEoF41kTb4_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
       title: "Peringatan Isra' Mi'raj",
       date: "8 Februari 2025",
-      description: "Tema: 'Memaknai Hikmah Perjalanan Isra' Mi'raj Nabi Muhammad SAW'"
+      description: "Tema: 'Memaknai Hikmah Perjalanan Isra' Mi'raj Nabi Muhammad SAW'",
+      image: "https://github.com/KhiyarKhairunnisa/Khiyar/blob/main/IMG_20250409_135041.jpg?raw=true",
+      link: "https://www.instagram.com/p/DFeR9WfS5WL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
       title: "Seminar Public Speaking Vol.2",
       date: "21 Februari 2025",
-      description: "Tema: 'Seni Berbicara di Depan Publik dengan Penuh Keyakinan'"
+      description: "Tema: 'Seni Berbicara di Depan Publik dengan Penuh Keyakinan'",
+      image: "https://github.com/KhiyarKhairunnisa/Khiyar/blob/main/IMG_20250409_135017.jpg?raw=true",
+      link: "https://www.instagram.com/p/DGMypf8zgPu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
       title: "Buka Puasa Bersama",
       date: "21 Maret 2025",
-      description: "Berbagi kebahagiaan dan raih keberkahan di bulan suci Ramadhan"
+      description: "Berbagi kebahagiaan dan raih keberkahan di bulan suci Ramadhan",
+      image: "https://github.com/KhiyarKhairunnisa/Khiyar/blob/main/IMG_20250409_135106.jpg?raw=true",
+      link: "https://www.instagram.com/p/DHR_794s6tE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     }
   ];
 
   const container = document.getElementById("event-container");
 
   events.forEach((event) => {
-    const card = document.createElement("div");
-    card.className = "event-card border rounded p-2 mb-2 shadow-sm";
-    card.style.backgroundColor = "#f8f9fa";
-    card.innerHTML = `
+  const card = document.createElement("div");
+  card.className = "event-card border rounded p-2 mb-2 shadow-sm d-flex align-items-start gap-3";
+  card.style.backgroundColor = "#f8f9fa";
+
+  card.innerHTML = `
+    <div style="flex-shrink: 0;">
+      ${event.image ? `
+        <a href="${event.link || '#'}" target="_blank">
+          <img src="${event.image}" alt="${event.title}" style="width: 90px; height: 90px; object-fit: cover; border-radius: 5px;">
+        </a>
+      ` : ''}
+    </div>
+    <div>
       <p style="font-weight: 600; color: #042698; margin: 0;">${event.title}</p>
       <p style="color: gray; margin: 2px 0 4px;">📅 ${event.date}</p>
       <p style="margin: 0 0 5px;">${event.description}</p>
-    `;
-    container.appendChild(card);
-  });
+    </div>
+  `;
+  container.appendChild(card);
+});
 </script>
 
 <button class="switch-btn" onclick="toggleMode()">Mode Gelap</button>
