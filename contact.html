@@ -76,17 +76,22 @@ nav a:hover {
             border-radius: 4px;
         }
         input[type="submit"] {
-            background-color: #042698; /* Warna tombol kirim */
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'GillMT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Trebuchet MS', sans-serif;
-        }
-        input[type="submit"]:hover {
-            background-color: grey; /* Warna saat hover tombol */
-        }
+    background-color: #042698;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'GillMT', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input[type="submit"]:hover {
+    background-color: grey;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
         footer {
             text-align: center;
             padding: 10px;
