@@ -93,12 +93,14 @@ nav a:hover {
             color: white;
             font-size: 14px;
             margin-top: 15px;
-            transition: background-color 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         .switch-btn:hover {
             background-color: grey;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
 /* Mode Gelap */
@@ -135,6 +137,14 @@ body.dark-mode .event-card p:nth-child(2) {
 }
 body.dark-mode .event-card p:nth-child(3) {
   color: black; /* deskripsi */
+}
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .cookie-popup {
@@ -208,6 +218,41 @@ body.dark-mode .event-card p:nth-child(3) {
 .cookie-actions .close-btn:hover {
   color: #555; /* warna abu lebih gelap */
 }
+.book-slider-wrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.book-slider {
+  display: flex;
+  gap: 12px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 10px;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.book-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 120px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.book-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
 
     </style>
     <link rel="stylesheet" href="style.css">
@@ -244,6 +289,27 @@ body.dark-mode .event-card p:nth-child(3) {
 
 <h2 style="font-size: 20px; margin-bottom: 15px;">📆 Event Perpustakaan</h2>
 <div id="event-container" style="max-width: 600px; font-size: 14px;"></div>
+<h2 style="font-size: 20px; margin-top: 30px; color: #042698;">📚 Koleksi Buku</h2>
+<p>Berikut adalah beberapa koleksi buku pilihan yang tersedia di Perpustakaan Khiyar Khairunnisa. Kamu bisa eksplorasi topik-topik menarik dari berbagai kategori!</p>
+<div class="mb-3" style="max-width: 300px;">
+  <input type="text" class="form-control form-control-sm" id="searchBook" placeholder="Cari judul buku...">
+</div>
+<div class="book-slider-wrapper mt-2">
+  <div class="book-slider" id="bookSlider">
+    <!-- 11 gambar buku -->
+    <div class="book-card"><img src="https://github.com/KhiyarKhairunnisa/Khiyar/blob/main/12.jpg?raw=true" alt="Atomic Habits"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_2.jpg" alt="Hujan"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_3.jpg" alt="The Old Man and The Sea"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_4.jpg" alt="Solo Leveling 1"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_5.jpg" alt="Solo Leveling 2"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_6.jpg" alt="Solo Leveling 3"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_7.jpg" alt="Solo Leveling 4"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_8.jpg" alt="Solo Leveling 5"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_9.jpg" alt="Solo Leveling 6"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_10.jpg" alt="Solo Leveling 7"></div>
+    <div class="book-card"><img src="LINK_GAMBAR_11.jpg" alt="Solo Leveling 8"></div>
+  </div>
+</div>
 
 <script>
   const events = [
@@ -303,13 +369,24 @@ body.dark-mode .event-card p:nth-child(3) {
 </script>
 
 <button id= "modeToggle" class="switch-btn" onclick="toggleMode()">
-  <i class="bi bi-moon-fill"></i>
+  <i id="modeIcon" class="bi bi-moon-fill"></i>
 </button>
 
 <script>
     function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+  const body = document.body;
+  const icon = document.getElementById('modeIcon');
+
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    icon.classList.remove('bi-moon-fill');
+    icon.classList.add('bi-sun-fill');
+  } else {
+    icon.classList.remove('bi-sun-fill');
+    icon.classList.add('bi-moon-fill');
+  }
+}
     </script>    
     </section>
 
@@ -369,6 +446,11 @@ window.onload = function() {
   if (cookiesDecision === null) {
     document.getElementById('cookiePopup').style.display = 'flex';
   }
+}
+const icon = document.getElementById('modeIcon');
+if (document.body.classList.contains('dark-mode')) {
+  icon.classList.remove('bi-moon-fill');
+  icon.classList.add('bi-sun-fill');
 }
 
 </script>
